@@ -5,7 +5,7 @@ Aquesta és la web corporativa de [Mega Pupil], una empresa fictícia dedicada a
 
 ## Demostració
 
-[🌐 URL de la web](https://github.com/pupilsito/web-corporativa.git)
+[🌐 URL de la web](https://pupilsito.github.io/web-corporativa/)
 
 ## Tecnologies Utilitzades
 
