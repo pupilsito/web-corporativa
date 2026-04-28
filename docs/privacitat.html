@@ -1,55 +1,178 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Política de Privacitat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacitat — FoodLogistic S.A.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0f4c81;
+            --secondary-color: #2a9d8f;
+            --dark-color: #1d2d35;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --border-radius: 8px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text-color); background: #fff; }
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); text-transform: uppercase; letter-spacing: 1px; text-decoration: none; }
+        .back-btn { display: flex; align-items: center; gap: 6px; color: var(--dark-color); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: color 0.2s; }
+        .back-btn:hover { color: var(--primary-color); }
 
-<style>
-body { font-family: Arial; background:#f8f9fa; margin:0; }
-header, footer { background:#17202a; color:white; padding:1rem; text-align:center; }
-main { padding:3rem 10%; background:white; }
-h1,h2 { color:#1a5276; }
-</style>
+        .legal-hero { margin-top: 60px; background: linear-gradient(rgba(15,76,129,0.85), rgba(15,76,129,0.7)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1350&q=80') center/cover; padding: 80px 20px; text-align: center; color: #fff; }
+        .legal-hero .tag { display: inline-block; background: rgba(42,157,143,0.3); border: 1px solid rgba(42,157,143,0.6); color: #fff; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 1rem; }
+        .legal-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; margin-bottom: 0.5rem; }
+        .legal-hero p { opacity: 0.8; font-size: 0.9rem; }
 
+        .legal-content { max-width: 860px; margin: 0 auto; padding: 60px 20px 80px; }
+        .legal-section { background: var(--light-color); border-radius: var(--border-radius); border-top: 4px solid var(--primary-color); padding: 2.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .legal-section h2 { font-size: 1.2rem; color: var(--primary-color); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
+        .section-num { background: var(--primary-color); color: #fff; width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; }
+        .legal-section p { color: #555; margin-bottom: 1rem; font-size: 0.95rem; }
+        .legal-section p:last-child { margin-bottom: 0; }
+        .legal-section ul { list-style: none; padding: 0; margin-bottom: 1rem; }
+        .legal-section ul li { color: #555; font-size: 0.95rem; padding: 0.35rem 0 0.35rem 1.4rem; position: relative; }
+        .legal-section ul li::before { content: '›'; position: absolute; left: 0; color: var(--secondary-color); font-weight: 700; }
+        .highlight-box { background: #e8f4f1; border-left: 4px solid var(--secondary-color); border-radius: 0 6px 6px 0; padding: 1rem 1.25rem; margin-top: 1rem; }
+        .highlight-box p { color: var(--dark-color); margin: 0; font-size: 0.9rem; }
+        strong { color: var(--dark-color); }
+        a { color: var(--secondary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Taula ARSLOP */
+        .rights-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+        .right-card { background: #fff; border: 1px solid #dde; border-radius: var(--border-radius); padding: 1.1rem; border-top: 3px solid var(--secondary-color); }
+        .right-card h4 { color: var(--primary-color); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.4rem; }
+        .right-card p { color: #555; font-size: 0.85rem; margin: 0; }
+
+        footer { background: var(--dark-color); color: #fff; padding: 30px 20px; text-align: center; font-size: 0.85rem; }
+        .footer-legal { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.75rem; }
+        .footer-legal a { color: rgba(255,255,255,0.6); font-size: 0.8rem; text-decoration: none; }
+        .footer-legal a:hover { color: var(--secondary-color); }
+    </style>
 </head>
-
 <body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">FoodLogistic</a>
+            <a href="index.html" class="back-btn">← Tornar a l'inici</a>
+        </nav>
+    </header>
 
-<header>
-<h2>FoodLogistic S.A.</h2>
-</header>
+    <div class="legal-hero">
+        <div class="tag">Protecció de dades</div>
+        <h1>Política de Privacitat</h1>
+        <p>Última actualització: abril de 2026 · Conforme al RGPD i LOPD-GDD</p>
+    </div>
 
-<main>
+    <div class="legal-content">
 
-<h1>Política de Privacitat</h1>
+        <div class="legal-section">
+            <h2><span class="section-num">01</span> Responsable del tractament</h2>
+            <ul>
+                <li><strong>Identitat:</strong> FoodLogistic S.A.</li>
+                <li><strong>NIF:</strong> A08123456</li>
+                <li><strong>Adreça:</strong> Carrer de la Teixidora, núm. 13, 08302 Mataró (Barcelona)</li>
+                <li><strong>Telèfon:</strong> +34 935 55 55 55</li>
+                <li><strong>Correu DPD:</strong> privacitat@foodlogistic.com</li>
+            </ul>
+        </div>
 
-<h2>Responsable</h2>
-<p>FoodLogistic S.A.</p>
+        <div class="legal-section">
+            <h2><span class="section-num">02</span> Dades que recollim</h2>
+            <p>A través del formulari de contacte recollim les dades següents:</p>
+            <ul>
+                <li><strong>Nom i cognoms</strong> — per identificar la persona de contacte.</li>
+                <li><strong>Adreça de correu electrònic</strong> — per respondre a la consulta.</li>
+                <li><strong>Telèfon de contacte</strong> — per a comunicació directa si cal.</li>
+                <li><strong>Contingut del missatge</strong> — descripció de la necessitat o consulta.</li>
+            </ul>
+            <p>No recollim categories especials de dades (salut, origen racial, opinions polítiques, etc.).</p>
+        </div>
 
-<h2>Dades recollides</h2>
-<p>Nom, correu electrònic, telèfon i missatge.</p>
+        <div class="legal-section">
+            <h2><span class="section-num">03</span> Finalitats i bases legals del tractament</h2>
+            <ul>
+                <li><strong>Gestió de consultes comercials</strong> — Base legal: interès legítim (art. 6.1.f RGPD) o execució de mesures precontractuals (art. 6.1.b RGPD).</li>
+                <li><strong>Enviament de comunicacions comercials</strong> — Base legal: consentiment exprés de l'interessat (art. 6.1.a RGPD). Únicament si marcau la casella corresponent.</li>
+                <li><strong>Compliment d'obligacions legals</strong> — Base legal: obligació legal (art. 6.1.c RGPD).</li>
+            </ul>
+            <div class="highlight-box">
+                <p>📌 El consentiment per a comunicacions comercials és totalment voluntari. Podeu revocar-lo en qualsevol moment sense afectar la gestió de la consulta.</p>
+            </div>
+        </div>
 
-<h2>Finalitat</h2>
-<p>Gestionar consultes i enviar informació comercial si s’autoritza.</p>
+        <div class="legal-section">
+            <h2><span class="section-num">04</span> Destinataris de les dades</h2>
+            <p>Les vostres dades no seran venudes ni cedides a tercers, excepte:</p>
+            <ul>
+                <li><strong>Encarregats del tractament:</strong> proveïdors tecnològics (hosting, CRM, correu) amb contracte de tractament de dades.</li>
+                <li><strong>Obligació legal:</strong> quan la llei o una autoritat competent ho requereixi.</li>
+                <li><strong>Transferències internacionals:</strong> si s'escau, a països amb decisió d'adequació o clàusules contractuals tipus.</li>
+            </ul>
+        </div>
 
-<h2>Base legal</h2>
-<p>Consentiment de l’usuari.</p>
+        <div class="legal-section">
+            <h2><span class="section-num">05</span> Temps de conservació</h2>
+            <ul>
+                <li><strong>Consultes sense relació contractual:</strong> <strong>1 any</strong> des de la darrera comunicació.</li>
+                <li><strong>Relació contractual:</strong> vigència del contracte i fins a <strong>5 anys</strong> posteriors per obligacions legals.</li>
+                <li><strong>Comunicacions comercials:</strong> fins que l'interessat revoqui el consentiment.</li>
+            </ul>
+        </div>
 
-<h2>Destinataris</h2>
-<p>No es cediran dades a tercers.</p>
+        <div class="legal-section">
+            <h2><span class="section-num">06</span> Drets ARSLOP</h2>
+            <p>Podeu exercir els vostres drets enviant un correu a <a href="mailto:privacitat@foodlogistic.com">privacitat@foodlogistic.com</a> amb còpia del DNI i indicant el dret que voleu exercir:</p>
+            <div class="rights-grid">
+                <div class="right-card">
+                    <h4>A — Accés</h4>
+                    <p>Obtenir confirmació sobre si tractem les vostres dades i accedir-hi.</p>
+                </div>
+                <div class="right-card">
+                    <h4>R — Rectificació</h4>
+                    <p>Corregir dades inexactes o incompletes.</p>
+                </div>
+                <div class="right-card">
+                    <h4>S — Supressió</h4>
+                    <p>Sol·licitar l'eliminació de les vostres dades quan sigui procedent.</p>
+                </div>
+                <div class="right-card">
+                    <h4>L — Limitació</h4>
+                    <p>Limitar el tractament en determinades circumstàncies.</p>
+                </div>
+                <div class="right-card">
+                    <h4>O — Oposició</h4>
+                    <p>Oposar-vos al tractament per motius personals.</p>
+                </div>
+                <div class="right-card">
+                    <h4>P — Portabilitat</h4>
+                    <p>Rebre les vostres dades en format estructurat i llegible per màquina.</p>
+                </div>
+            </div>
+            <p style="margin-top:1.25rem;">Si considereu que els vostres drets no han estat atesos, podeu reclamar davant l'<a href="https://www.aepd.es" target="_blank" rel="noopener">Agència Espanyola de Protecció de Dades (AEPD)</a>.</p>
+        </div>
 
-<h2>Conservació</h2>
-<p>Les dades es conservaran mentre siguin necessàries.</p>
+        <div class="legal-section">
+            <h2><span class="section-num">07</span> Seguretat de les dades</h2>
+            <p>FoodLogistic S.A. aplica mesures tècniques i organitzatives adequades per protegir les dades contra accés no autoritzat, pèrdua o destrucció, incloent xifrat HTTPS, control d'accessos i còpies de seguretat periòdiques.</p>
+        </div>
 
-<h2>Drets ARSLOP</h2>
-<p>Pots exercir els teus drets d'accés, rectificació, supressió, oposició, limitació i portabilitat enviant un email a info@foodlogistic.com.</p>
+    </div>
 
-</main>
-
-<footer>
-<p>© 2024 FoodLogistic S.A.</p>
-</footer>
-
+    <footer>
+        <span style="font-size:1.2rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;">FoodLogistic</span>
+        <div class="footer-legal">
+            <a href="index.html">Inici</a>
+            <a href="avis-legal.html">Avís Legal</a>
+            <a href="politica-cookies.html">Política de Cookies</a>
+        </div>
+        <p style="margin-top:1rem;opacity:0.5;font-size:0.8rem;">&copy; 2026 FoodLogistic S.A. Tots els drets reservats.</p>
+    </footer>
 </body>
 </html>
