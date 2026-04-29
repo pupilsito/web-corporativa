@@ -254,6 +254,97 @@
             .contact-container { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
         }
+
+        /* COOKIE BANNER */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 3px solid var(--primary-color);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            padding: 1.5rem 5%;
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        .cookie-text {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .cookie-text p {
+            margin-bottom: 0.5rem;
+        }
+
+        .cookie-text a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .cookie-btn-accept {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .cookie-btn-accept:hover {
+            background: #a04000;
+        }
+
+        .cookie-btn-decline {
+            background: transparent;
+            color: var(--text-dark);
+            border: 1px solid #ccc;
+        }
+
+        .cookie-btn-decline:hover {
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cookie-btn {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -422,6 +513,35 @@
                     });
                 });
             });
+
+            // COOKIE BANNER FUNCTIONALITY
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const declineBtn = document.getElementById('declineCookies');
+
+            // Check if user has already made a choice
+            const cookieChoice = localStorage.getItem('cookieChoice');
+
+            if (!cookieChoice) {
+                // Show banner if no choice has been made
+                setTimeout(() => {
+                    cookieBanner.classList.add('show');
+                }, 1000); // Delay to ensure page is loaded
+            }
+
+            // Handle accept button
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieChoice', 'accepted');
+                cookieBanner.classList.remove('show');
+                // Here you could enable analytics, etc.
+            });
+
+            // Handle decline button
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieChoice', 'declined');
+                cookieBanner.classList.remove('show');
+                // Here you could disable non-essential cookies
+            });
         });
     </script>
     <!-- Default Statcounter code for Mega Pupil
@@ -438,5 +558,18 @@ href="https://statcounter.com/" target="_blank"><img class="statcounter"
 src="https://c.statcounter.com/13222722/0/62c2166a/1/" alt="site stats"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
+
+    <!-- COOKIE BANNER -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-text">
+            <p><strong>Política de Cookies</strong></p>
+            <p>Utilitzem cookies per millorar la teva experiència al nostre lloc web. Consulta la nostra <a href="politica-cookies.html" target="_blank">política de cookies</a> per obtenir més informació.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button id="acceptCookies" class="cookie-btn cookie-btn-accept">Acceptar totes</button>
+            <button id="declineCookies" class="cookie-btn cookie-btn-decline">Rebutjar</button>
+        </div>
+    </div>
+
 </body>
 </html>
